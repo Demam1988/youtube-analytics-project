@@ -7,7 +7,7 @@ if __name__ == '__main__':
     """
 {
   "kind": "youtube#channelListResponse",
-  "etag": "uAdmwT0aDhY9LmAzJzIafD6ATRw",
+  "etag": "8BoM0d6ty8q9iAlcgBIjUjuqPis",
   "pageInfo": {
     "totalResults": 1,
     "resultsPerPage": 5
@@ -15,7 +15,7 @@ if __name__ == '__main__':
   "items": [
     {
       "kind": "youtube#channel",
-      "etag": "cPh7A8SKcZxxs_UPCiBaXP1wNDk",
+      "etag": "c796t2aaS_JuMo3-nO3e_XUharw",
       "id": "UC-OVMPlMA3-YCIeg4z5z23A",
       "snippet": {
         "title": "MoscowPython",
@@ -24,17 +24,17 @@ if __name__ == '__main__':
         "publishedAt": "2012-07-13T09:48:44Z",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/ytc/AGIKgqNv2rZ6mOSuXvJLYhmTc0nd-LtI5RiDtsEBpguJXA=s88-c-k-c0x00ffffff-no-rj",
+            "url": "https://yt3.ggpht.com/ytc/AOPolaTejB96pN-8rzeM6mmnaxiVpLKQjWfxtfnoXlfyCQ=s88-c-k-c0x00ffffff-no-rj",
             "width": 88,
             "height": 88
           },
           "medium": {
-            "url": "https://yt3.ggpht.com/ytc/AGIKgqNv2rZ6mOSuXvJLYhmTc0nd-LtI5RiDtsEBpguJXA=s240-c-k-c0x00ffffff-no-rj",
+            "url": "https://yt3.ggpht.com/ytc/AOPolaTejB96pN-8rzeM6mmnaxiVpLKQjWfxtfnoXlfyCQ=s240-c-k-c0x00ffffff-no-rj",
             "width": 240,
             "height": 240
           },
           "high": {
-            "url": "https://yt3.ggpht.com/ytc/AGIKgqNv2rZ6mOSuXvJLYhmTc0nd-LtI5RiDtsEBpguJXA=s800-c-k-c0x00ffffff-no-rj",
+            "url": "https://yt3.ggpht.com/ytc/AOPolaTejB96pN-8rzeM6mmnaxiVpLKQjWfxtfnoXlfyCQ=s800-c-k-c0x00ffffff-no-rj",
             "width": 800,
             "height": 800
           }
@@ -46,10 +46,10 @@ if __name__ == '__main__':
         "country": "RU"
       },
       "statistics": {
-        "viewCount": "2303120",
-        "subscriberCount": "25900",
+        "viewCount": "2360496",
+        "subscriberCount": "26300",
         "hiddenSubscriberCount": false,
-        "videoCount": "685"
+        "videoCount": "694"
       }
     }
   ]
