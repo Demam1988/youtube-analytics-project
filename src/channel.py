@@ -38,6 +38,6 @@ class Channel:
 
 
     @classmethod
-    def get_service(slc, channel_id):
+    def get_service(slc):
         return build('youtube', 'v3', developerKey='AIzaSyBye8OSheiQHAy-_tHT7JKneRcHzc9hcig')
 
