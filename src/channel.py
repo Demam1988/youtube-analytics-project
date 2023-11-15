@@ -13,7 +13,13 @@ class Channel:
 
     def __init__(self, channel_id: str) -> None:
         """Экземпляр инициализирует id канала. Дальше все данные будут подтягиваться по API"""
-        self.channel_id = channel_id
+        self.id = channel_id
+        self.info = self.get_service(channel_id)
+        self.title = self.info['items'][0]['snippet']['title']
+        self.description = self.info['items'][0]['snippet']['description']
+        self.url = 'https://www.youtube.com/' + self.info['items'][0]['snippet']['customUrl']
+        self.video_count = int(self.info['items'][0]['statistics']['videoCount'])
+        self.viewCount = int(self.info['items'][0]['statistics']['viewCount'])
 
 
     def printj(dict_to_print: dict) -> None:
@@ -26,14 +32,11 @@ class Channel:
         channel = self.youtube.channels().list(id=self.channel_id, part='snippet,statistics').execute()
         print(json.dumps(channel, indent=2, ensure_ascii=False))
 
+    def to_json(self, param):
+        pass
 
-class Video:
-    def __init__(self, video_id: str):
-        self.id_video = video_id
-        video_response = self.get_service().videos().list(part='snippet,statistics,contentDetails,topicDetails',
-                                                          id=video_id).execute()
-        self.title: str = video_response['items'][0]['snippet']['title']
 
     @classmethod
-    def get_service(cls):
-        return build('youtube', 'v3', developerKey=os.getenv('AIzaSyDNal8EcMuEsVzrNkIdbkMWo2d_Nu6w2PI'))
+    def get_service(slc, channel_id):
+        yt_channel_all_info = slc.youtube.channels().list(id=channel_id, part='snippet_statistics').execute()
+        return yt_channel_all_info
