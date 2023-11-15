@@ -9,13 +9,12 @@ class Channel:
     """Класс для ютуб-канала"""
 
     api_key = 'AIzaSyBye8OSheiQHAy-_tHT7JKneRcHzc9hcig'
-        #'AIzaSyBye8OSheiQHAy-_tHT7JKneRcHzc9hcig'
-    youtube = build('youtube', 'v3', developerKey=api_key)
+    youtube = build('youtube', 'v3', developerKey='AIzaSyBye8OSheiQHAy-_tHT7JKneRcHzc9hcig')
 
     def __init__(self, channel_id: str) -> None:
         """Экземпляр инициализирует id канала. Дальше все данные будут подтягиваться по API"""
         self.channel_id = channel_id
-        self.info = self.get_service(channel_id)
+        self.info = Channel.get_service()
         self.title = self.info['items'][0]['snippet']['title']
         self.description = self.info['items'][0]['snippet']['description']
         self.url = 'https://www.youtube.com/' + self.info['items'][0]['snippet']['customUrl']
@@ -38,6 +37,6 @@ class Channel:
 
 
     @classmethod
-    def get_service(slc):
+    def get_service(cls):
         return build('youtube', 'v3', developerKey='AIzaSyBye8OSheiQHAy-_tHT7JKneRcHzc9hcig')
 
