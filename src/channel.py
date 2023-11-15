@@ -9,11 +9,12 @@ class Channel:
     """Класс для ютуб-канала"""
 
     api_key = 'AIzaSyBye8OSheiQHAy-_tHT7JKneRcHzc9hcig'
+        #'AIzaSyBye8OSheiQHAy-_tHT7JKneRcHzc9hcig'
     youtube = build('youtube', 'v3', developerKey=api_key)
 
     def __init__(self, channel_id: str) -> None:
         """Экземпляр инициализирует id канала. Дальше все данные будут подтягиваться по API"""
-        self.id = channel_id
+        self.channel_id = channel_id
         self.info = self.get_service(channel_id)
         self.title = self.info['items'][0]['snippet']['title']
         self.description = self.info['items'][0]['snippet']['description']
@@ -29,7 +30,7 @@ class Channel:
 
     def print_info(self) -> None:
         """Выводит в консоль информацию о канале"""
-        channel = self.youtube.channels().list(id=self.channel_id, part='snippet,statistics').execute()
+        channel = self.youtube.channels().list(id=self.channel_id, part='snippet_statistics').execute()
         print(json.dumps(channel, indent=2, ensure_ascii=False))
 
     def to_json(self, param):
@@ -38,5 +39,5 @@ class Channel:
 
     @classmethod
     def get_service(slc, channel_id):
-        yt_channel_all_info = slc.youtube.channels().list(id=channel_id, part='snippet_statistics').execute()
-        return yt_channel_all_info
+        return build('youtube', 'v3', developerKey='AIzaSyBye8OSheiQHAy-_tHT7JKneRcHzc9hcig')
+
