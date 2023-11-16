@@ -14,7 +14,6 @@ class Channel:
 
     def __init__(self, channel_id: str) -> None:
         """Экземпляр инициализирует id канала. Дальше все данные будут подтягиваться по API"""
-        self._channel_id = None
         self.__channel_id = channel_id
         self.info = self.get_channel_info
         self.title = self.info['items'][0]['snippet']['title']
@@ -56,4 +55,4 @@ class Channel:
 
     @channel_id.setter
     def channel_id(self, value):
-        self._channel_id = value
+        self.__channel_id = value
