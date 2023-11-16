@@ -15,7 +15,7 @@ class Channel:
     def __init__(self, channel_id: str) -> None:
         """Экземпляр инициализирует id канала. Дальше все данные будут подтягиваться по API"""
         self.__channel_id = channel_id
-        self.info = self.get_channel_info
+        self.info = self.get_channel_info()
         self.title = self.info['items'][0]['snippet']['title']
         self.description = self.info['items'][0]['snippet']['description']
         self.url = 'https://www.youtube.com/' + self.info['items'][0]['snippet']['customUrl']
@@ -53,6 +53,3 @@ class Channel:
     def channel_id(self):
         return self.__channel_id
 
-    @channel_id.setter
-    def channel_id(self, value):
-        self.__channel_id = value
