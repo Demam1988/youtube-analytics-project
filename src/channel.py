@@ -13,7 +13,7 @@ class Channel:
 
     def __init__(self, channel_id: str, id_str=None) -> None:
         """Экземпляр инициализирует id канала. Дальше все данные будут подтягиваться по API"""
-        self.data = self.get_data
+        self.data = self.get_data(channel_id)
         self.__channel_id = channel_id
         self.info = self.get_channel_info()
         self.title = self.info['items'][0]['snippet']['title']
@@ -109,9 +109,8 @@ class Channel:
         return True
 
     @classmethod
-    def get_data(cls, id_str):
+    def get_data(cls, channel_id):
         """ Получает данные от YouTube. """
         cls.youtube = cls.get_service()
-        cls.data = cls.youtube.channels().list(id=id_str, part='snippet, ' \
-                                                               'statistics').execute()
+        cls.data = cls.youtube.channels().list(id=channel_id,part='snippet,statistics').execute()
         return cls.data
