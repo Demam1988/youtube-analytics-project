@@ -11,7 +11,7 @@ class Video:
     data = None
     youtube = None
 
-    def __init__(self, id_video):
+    def __init__(self, id_video: object) -> object:
         self.data = self.get_data(id_video)
         self.id_video = id_video
         try:
