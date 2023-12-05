@@ -2,7 +2,7 @@ import os
 
 from googleapiclient.discovery import build
 
-api_key = os.getenv('API_KEY')
+api_key = os.getenv('YT_API_KEY')
 
 
 class Video:

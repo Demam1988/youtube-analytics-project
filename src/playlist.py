@@ -6,7 +6,7 @@ from googleapiclient.discovery import build
 
 from src.video import Video, PLVideo
 
-api_key = 'AIzaSyBye8OSheiQHAy-_tHT7JKneRcHzc9hcig'
+api_key = os.getenv('YT_API_KEY')
 
 
 class MixVideo:
@@ -14,8 +14,7 @@ class MixVideo:
     Класс с методами получения данных по видеороликам в плейлисте и получением
     списка их id.
     """
-
-    youtube = build('youtube', 'v3', developerKey='AIzaSyBye8OSheiQHAy-_tHT7JKneRcHzc9hcig')
+    youtube = build('youtube', 'v3', developerKey=api_key)
 
     def __init__(self, id_playlist):
         self.id_playlist = id_playlist

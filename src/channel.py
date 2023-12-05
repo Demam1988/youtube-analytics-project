@@ -1,14 +1,13 @@
 import json
 import os
-# необходимо установить через: pip install google-api-python-client
 from googleapiclient.discovery import build
-
+api_key = os.getenv('YT_API_KEY')
 
 class Channel:
     """Класс для ютуб-канала"""
 
     api_key = 'AIzaSyBye8OSheiQHAy-_tHT7JKneRcHzc9hcig'
-    youtube = build('youtube', 'v3', developerKey='AIzaSyBye8OSheiQHAy-_tHT7JKneRcHzc9hcig')
+    youtube = build('youtube', 'v3', developerKey=api_key)
     data = None
 
     def __init__(self, channel_id: str, id_str=None) -> None:
